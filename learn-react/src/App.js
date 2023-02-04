@@ -1,16 +1,15 @@
-// import logo from "./logo.svg";
-// import Hello from "./component/Hello.jsx";
-// import Counter from "./component/Counter.jsx";
-import InputText from "./component/InputText.jsx";
-import Inputs from "./component/Inputs.jsx";
-// import TodoList from "./component/TodoList.jsx";
+import { useState } from "react";
+import Effect from "./component/todos/Effect.jsx";
 
 function App() {
+  const [show, setShow] = useState(true);
   return (
     <>
-      {/* <TodoList /> */}
-      <InputText />
-      <Inputs />
+      <button onClick={() => setShow(!show)}>
+        {show ? "언마운트" : "마운트"}
+      </button>
+      {/* 조건부 렌더링 */}
+      {show && <Effect />}
     </>
   );
 }
