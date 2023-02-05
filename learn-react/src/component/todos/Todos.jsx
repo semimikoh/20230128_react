@@ -34,9 +34,6 @@ const initialState = [
   { id: 3, text: "useCallback, UseMemo 배우기", done: false },
 ];
 
-export const TodoStateContext = createContext(null);
-export const TodoDispatchContext = createContext(null);
-
 function Todos() {
   // useReducer (리듀서 함수, 초기값) => 상태값, 디스패치 함수 반환
   const [todos, dispatch] = useReducer(reducer, initialState);
@@ -63,14 +60,10 @@ function Todos() {
   }, []);
 
   return (
-    <TodoStateContext.Provider value={todos}>
-      <TodoDispatchContext.Provider value={dispatch}>
-        <div>
-          <TodoCreate onChange={handleText} onSubmit={handleSubmit} />
-          <TodoList />
-        </div>
-      </TodoDispatchContext.Provider>
-    </TodoStateContext.Provider>
+    <div>
+      <TodoCreate onChange={handleText} onSubmit={handleSubmit} />
+      <TodoList />
+    </div>
   );
 }
 

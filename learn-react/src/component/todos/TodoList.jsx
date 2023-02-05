@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from "react";
-import { CountContext } from "../../App";
+import { useTodoDispatch, useTodoState } from "../../context/todos";
 import { TodoDispatchContext, TodoStateContext } from "./Todos";
 
 function CountUndoneTodo(todo) {
@@ -8,7 +8,7 @@ function CountUndoneTodo(todo) {
 }
 
 function TodoList({ onRemove, onToggle }) {
-  const todos = useContext(TodoStateContext);
+  const todos = useTodoState();
 
   const undoneCount = useMemo(() => {
     //의존성 배열에 있는 값이 변했을 때에만 다시 연산한다.
@@ -19,12 +19,7 @@ function TodoList({ onRemove, onToggle }) {
       해야할일 : {undoneCount}
       <ul>
         {todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onRemove={onRemove}
-            onToggle={onToggle}
-          />
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </ul>
     </div>
@@ -32,7 +27,7 @@ function TodoList({ onRemove, onToggle }) {
 }
 
 function TodoItem({ todo, onRemove, onToggle }) {
-  const dispatch = useContext(TodoDispatchContext);
+  const dispatch = useTodoDispatch();
 
   return (
     <li>
