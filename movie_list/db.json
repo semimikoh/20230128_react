@@ -1,0 +1,36 @@
+{
+  "todos": [
+    {
+      "text": "ㄴㅇㄹㅇㄴ",
+      "done": false,
+      "id": 1
+    },
+    {
+      "text": "ㄴㅇㄹㅇㄴ",
+      "done": false,
+      "id": 2
+    },
+    {
+      "text": "ㅇㄴㄹㄴ",
+      "done": false,
+      "id": 3
+    },
+    {
+      "text": "ㄹㄴㅇㄹ",
+      "done": false,
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "text": "Todos 컴포넌트 만들기",
+      "done": true
+    },
+    {
+      "id": 1,
+      "text": "json-server로 연동 완료",
+      "done": true
+    }
+  ]
+}
