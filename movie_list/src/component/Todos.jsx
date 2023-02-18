@@ -8,6 +8,9 @@ function Todos() {
     data: null,
     isError: false,
   });
+  console.log(todos.data);
+
+  const { isLoding, data, isError } = todos;
 
   const fetchData = async () => {
     //  await : Promise가 resolve 되기 전까지 다음 코드가 실행되지 않는다.
@@ -80,7 +83,8 @@ function Todos() {
   useEffect(() => {
     fetchData();
   }, []);
-  if (todos.isLoding) return <div>로딩중 ...</div>;
+
+  if (isLoding) return <div>로딩중 ...</div>;
   if (todos.isError) return <div>에러 발생!</div>;
 
   return (

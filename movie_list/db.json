@@ -14,11 +14,6 @@
       "text": "ㅇㄴㄹㄴ",
       "done": false,
       "id": 3
-    },
-    {
-      "text": "ㄹㄴㅇㄹ",
-      "done": false,
-      "id": 4
     }
   ],
   "users": [
@@ -31,6 +26,28 @@
       "id": 1,
       "text": "json-server로 연동 완료",
       "done": true
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "제목입니다.",
+      "bodu": "글 내용입니다."
+    },
+    {
+      "id": 2,
+      "title": "제목입니다.1",
+      "bodu": "글 내용입니다."
+    },
+    {
+      "id": 3,
+      "title": "제목입니다.2",
+      "bodu": "글 내용입니다."
+    },
+    {
+      "title": "dsfds",
+      "body": "sdfdsf",
+      "id": 4
     }
   ]
 }
