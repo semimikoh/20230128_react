@@ -1,12 +1,13 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTodo } from "../redux/todos";
+import { createTodo } from "../redux/todoSlice";
+
+// import { createTodo } from "../redux/todos";
 
 function TodoInput() {
   const [text, setText] = useState("");
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-  const nextId = useRef(4);
 
   //   console.log(nextId);
 
@@ -23,7 +24,7 @@ function TodoInput() {
     e.preventDefault();
     setText("");
     dispatch(createTodo(text));
-    console.log(createTodo(text));
+    console.log(createTodo().payload);
   };
 
   {

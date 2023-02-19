@@ -4,13 +4,15 @@ import Counter from "./component/Counter";
 import Todos from "./component/Todos";
 import { countReducer } from "./redux/counter";
 import { todosReducer } from "./redux/todos";
+import { todoReducer } from "./redux/todoSlice";
 import { todosToolkitReducer } from "./redux/todos_toolkit";
 
 const store = configureStore({
   reducer: {
     counter: countReducer,
-    todos: todosReducer,
+    // todos: todosReducer,
     // todos: todosToolkitReducer,
+    todos: todoReducer,
   },
 });
 
