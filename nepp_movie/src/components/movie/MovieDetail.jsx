@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import { tmdbAxios } from "../../api/tmdb";
 
 function MovieDetail() {
@@ -16,11 +17,33 @@ function MovieDetail() {
   if (!movie) return <div>로딩중...</div>;
 
   return (
-    <div>
-      <img src={poster_url} alt="" />
-      <div>{movie.title}</div>
-    </div>
+    <Container>
+      <ImageBox>
+        <img src={poster_url} alt="" />
+      </ImageBox>
+      <Title>{movie.title}</Title>
+    </Container>
   );
 }
 
 export default MovieDetail;
+
+const Container = styled.div`
+  width: 900px;
+`;
+
+const ImageBox = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  /* img {
+    height: 100%;
+  } */
+`;
+
+const Title = styled.div`
+  font-size: 1.2rem;
+  font-weight: 600;
+`;

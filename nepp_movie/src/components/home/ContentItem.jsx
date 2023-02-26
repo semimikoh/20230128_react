@@ -20,9 +20,9 @@ function ContentItem({ item }) {
 
 const Container = styled.li`
   width: 150px;
-  img {
+  /* img {
     width: 200px;
-  }
+  } */
   /* padding: 10px 5px; */
 `;
 
