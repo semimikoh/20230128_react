@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { login } from "../../api/auth";
 import { useInput } from "../../Hooks/useInput";
@@ -6,6 +6,7 @@ import Button from "../common/Button";
 import Input from "../common/Input";
 
 function Login() {
+  const token = localStorage.getItem("token");
   const [inputs, handleInputs] = useInput({
     email: "",
     password: "",
@@ -20,6 +21,8 @@ function Login() {
       navigate("/");
     }
   };
+
+  // if (token) return <Navigate to="/" />;
 
   return (
     <Container>

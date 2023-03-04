@@ -46,10 +46,24 @@ export const getCurrentUser = async () => {
     //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbWlAc2VtaS5zZW1pIiwic3ViIjo3MywiaWF0IjoxNjc3MzkzNjgwLCJleHAiOjE2Nzc0ODAwODB9.KX4xe5HhyePdHeJ6LP3RFJa49quUv2jKeOqwl5QvKE4",
     //   },
     // });
-    console.log(data);
+    return data;
   } catch (e) {}
 };
 
+export const patchProfile = async (file) => {
+  try {
+    // 파일을 서버에 보내기 위해서 FormData 이용
+    const form = new FormData();
+    // FormData.prototype.appen("키", "값")
+    form.append("profile", file);
+
+    const { data } = await authAxios.patch("/profile", form);
+
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
 // signup에서 useInput으로 받아 오는 값이 같기 때문에 form으로 바꿔줌
 
 // export const signUp = (name, email, password) => {

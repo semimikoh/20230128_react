@@ -6,6 +6,7 @@ import Auth from "./component/pages/Auth";
 import Edit from "./component/pages/Edit";
 import Home from "./component/pages/Home";
 import Login from "./component/pages/Login";
+import Post from "./component/pages/Post";
 import Profile from "./component/pages/Profile";
 import Search from "./component/pages/Search";
 import SignUp from "./component/pages/SignUp";
@@ -24,6 +25,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="search" element={<Search />} />
           <Route path="edit" element={<Edit />} />
+          <Route path="posts/:id" element={<Post />} />
         </Route>
       </Routes>
     </div>
